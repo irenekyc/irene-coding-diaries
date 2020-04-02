@@ -9,6 +9,15 @@ html{
     font-size:12px;
 }
 
+a{
+    text-decoration: none;
+    color:black;
+}
+
+li{
+    list-style:none;
+}
+
 .web-container{
     width:100vw;
     height:auto;
@@ -112,17 +121,21 @@ html{
     display: flex;
     flex-direction: column;
     justify-content: center;
+
 }
 .blog-heading, .blog-description, .blog-read-more{
     line-height: 50px;
     padding:5px;
 }
 .blog-heading{
-    letter-spacing: 0.1rem;
     font-size:36px;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    font-weight: 700;
 }
 .blog-description {
     font-size:24px;
+    font-style: italic;
 }
 .blog-read-more{
     font-size:18px;
@@ -151,8 +164,8 @@ html{
 }
 
 .wrapper{
-    padding: 50px 8%;
-    padding-bottom:100px;
+    padding: 0 8%;
+    padding-bottom:150px;
 }
 
 .main-content-session-header{
@@ -280,6 +293,18 @@ html{
     height:200px;
 }
 
+.read-all-container{
+    position:absolute;
+    width: 20vw;
+    height:60px;
+    padding:20px;
+    font-size:15px;
+    line-height: 20px;
+    right:0;
+    bottom:80px;
+
+}
+
 .footer{
     width:100vw;
     height:80px;
@@ -296,13 +321,17 @@ html{
     line-height: 20px;
 }
 
-.social-meida{
-    display: flex;
+.social-media{
+  width:100%;
+}
+.social-media ul{
+    width:100%;
+    display:flex;
     justify-content: center;
 }
 
-.social-meida i{
-    font-size:18px;
-    line-height: 20px;
-    margin-right:20px;
+.social-media li i{
+    font-size:20px;
+    line-height: 30px;
+    padding:0 20px;
 }
