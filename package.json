@@ -1,0 +1,12 @@
+{
+  "name": "irene-coding-diaries",
+  "version": "1.0.0",
+  "description": "This is my node coding challenges",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node src/app.js"
+  },
+  "author": "Irene K",
+  "license": "ISC"
+}

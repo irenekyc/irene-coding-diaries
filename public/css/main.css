@@ -1,0 +1,308 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: 'Gotu', sans-serif;
+    font-size:12px;
+}
+
+.web-container{
+    width:100vw;
+    height:auto;
+    position:relative;
+}
+
+.hero-container{
+    width:100vw;
+    height: 100vh;  
+}
+.hero-slides{
+    width:200vw;
+    height:90vh;
+    display:flex;
+    animation: slideshow 7s forwards;
+    opacity:0;
+    overflow: hidden;
+}
+
+@keyframes slideshow{
+0%{
+    transform: translateX(0);
+}
+10%{
+    opacity:1;
+}
+85%{
+    transform: translateX(0);
+    opacity:1;
+}
+
+90%{
+    transform: translateX(0);
+    opacity:0;
+}
+95%{
+    transform:translateX(-100vw);
+    opacity:0;
+}
+100%{
+    transform:translateX(-100vw);
+    opacity:1;
+}
+
+}
+
+.hero-slide{
+    width:100vw;
+    height:90vh;
+    position:relative;
+}
+
+.hero-bg{
+    width:100vw;
+    position:absolute;
+    height:100vh;
+    top:0;
+    left:0;
+
+}
+.hero-bg img {
+    height:100%;
+    width:100%;
+    object-fit: cover;
+    object-position:bottom center;
+}
+.hero-title{
+    text-align: center;
+    position:absolute;
+    width:100%;
+    height:100%;
+    background: rgba(255,255,255,0.3);
+    font-size:24px;
+    letter-spacing: 0.1rem;
+    font-weight: 700;
+    line-height: 50px;
+    top:0;
+    left:0;
+    padding: 50px;
+    text-shadow: 5px 5px 15px rgba(255,255,255,0.5);
+}
+
+.featured-blog{
+    display:flex;
+}
+
+.featured-blog-bg img{
+    height:100vh;
+}
+
+.featured-blog-bg{
+
+    width:50%;
+    height:100%;
+    top:0;
+    left:0;
+}
+.featured-blog-title{
+    width:50%;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.blog-heading, .blog-description, .blog-read-more{
+    line-height: 50px;
+    padding:5px;
+}
+.blog-heading{
+    letter-spacing: 0.1rem;
+    font-size:36px;
+}
+.blog-description {
+    font-size:24px;
+}
+.blog-read-more{
+    font-size:18px;
+}
+
+.btn{
+    cursor: pointer;
+}
+.btn:hover{
+    font-style: italic;
+}
+
+.float-bottom{
+    width:100%;
+    height:10vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size:18px;
+    line-height: 50px;
+}
+
+.content-container{
+    width:100vw;
+    background: #F3F5F4;
+}
+
+.wrapper{
+    padding: 50px 8%;
+    padding-bottom:100px;
+}
+
+.main-content-session-header{
+    width:100%;
+    height:80px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #EEDBDB;
+ 
+}
+
+.filter-container{
+    display:flex;
+    width:100%;
+    height:50px;
+    justify-content: center;
+}
+
+.filter-div, .sort-div, .search-div{
+    width:30%;
+    height:30px;
+    display: flex;
+   justify-content: center;
+   font-size:14px;
+   line-height: 30px;
+}
+.filter{
+    font-size:14px;
+    margin-left:10px;
+    cursor: pointer;
+}
+
+.filter-sub{
+    padding:0 10px;
+    display: none;
+}
+.sort-sub{
+    padding:0 10px;
+    display:none;
+}
+.session-title{
+    font-size:24px;
+    line-height: 50px;
+}
+
+.main-content{
+
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content: center;
+}
+
+.col-7{
+    width:70%;
+}
+.col-5{
+    width:30%;
+}
+
+.blog-card{
+    height:200px;
+    width:100%;
+    padding:20px 10px;
+    display:flex;
+    margin:10px;
+    border-bottom: 1px solid lightgray;
+}
+.blog-cover-image{
+    width:30%;
+    height:100%;
+    overflow: hidden;
+}
+.blog-cover-image img{
+    height:200px;
+}
+.blog-cover-story{
+    width:70%;
+    height:100%;
+    display:flex;
+    flex-direction: column;
+    padding:5px 25px;
+
+}
+
+.blog-cover-title{
+    font-size:24px;
+    line-height:30px;
+
+}
+.blog-cover-details{
+    font-size:12px;
+    line-height:18px;
+    
+}
+.blog-cover-description{
+    margin-top:10px;
+    font-size:14px;
+    line-height: 20px;
+    font-style: italic;
+    letter-spacing: 0.1rem;
+    flex:1;
+
+}
+
+.continue-reading{
+    font-size:12px;
+    line-height: 30px;
+}
+
+.aboutMe{
+    padding:20px;
+    text-align: center;
+}
+.profile-pic{
+    height:200px;
+    width:100%;
+    text-align: center;
+    
+}
+.profile-pic img{
+    height:200px;
+}
+
+.footer{
+    width:100vw;
+    height:80px;
+    position: absolute;
+    left:0;
+    bottom:0;
+    background: #EEDBDB;
+    padding:20px 20px;
+    text-align: center;
+
+}
+.footer p{
+    font-size:14px;
+    line-height: 20px;
+}
+
+.social-meida{
+    display: flex;
+    justify-content: center;
+}
+
+.social-meida i{
+    font-size:18px;
+    line-height: 20px;
+    margin-right:20px;
+}
