@@ -15,3 +15,27 @@ filterContainer.addEventListener('click', (e)=>{
         return console.log(document.getElementById('searchKeyWords').value)
     } 
 })
+
+// Reveal on Scroll
+
+const slideInItems = document.querySelectorAll('.reveal-items-slide')
+const fadeInItems = document.querySelectorAll('.reveal-items')
+const browserHeight = window.innerHeight
+
+window.addEventListener('scroll', (e)=>{
+
+//calculate when we should start calculating
+    slideInItems.forEach((item)=>{
+        calculateScroll(item, 'slideIn', 70)
+    })
+    fadeInItems.forEach((item)=>{
+        calculateScroll(item, 'fadeIn', 95)
+    })    
+})
+
+const calculateScroll = (item, effect, percentage)=>{
+        let scrollPercentage = (item.getBoundingClientRect().y / browserHeight) *100
+        if (scrollPercentage < percentage) {
+            return item.classList.add(effect)
+        }
+    }

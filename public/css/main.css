@@ -172,7 +172,7 @@ li{
 }
 .session-title{
     font-size:1.5rem;
-    line-height: 3rem;
+    line-height: 2rem;
     font-weight:700;
 }
 .filter{
@@ -367,8 +367,8 @@ input[type="text"]{
         line-height:1.8rem;
     }
     .session-title{
-        font-size:2rem;
-        line-height: 5rem;;
+        font-size:1.5rem;
+        line-height: 3rem;;
     }
     .filter-container{
         font-size:1.2rem;
@@ -513,3 +513,28 @@ input[type="text"]{
     display:none;
 }
 
+/*Reveal*/
+.reveal-items-slide, .reveal-items{
+    opacity:0;
+    transition: 2s;
+}
+
+.reveal-items-slide:nth-child(odd){
+    transform: translateX(-100vw);
+}
+
+.reveal-items-slide:nth-child(even){
+    transform: translateX(100vw);
+}
+.slideIn:nth-child(odd){
+    opacity:1;
+    transform: translateX(0);
+}
+.slideIn:nth-child(even){
+    opacity:1;
+    transform: translateX(0);
+}
+
+.fadeIn{
+    opacity:1;
+}
