@@ -1,5 +1,5 @@
+////////////////////Filter////////////////////////////////
 const filterContainer = document.querySelector('.filter-container')
-
 filterContainer.addEventListener('click', (e)=>{
     const actionPoint =  e.target.id
     if (actionPoint.includes('main')){
