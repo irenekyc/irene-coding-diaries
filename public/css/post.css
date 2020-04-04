@@ -8,7 +8,6 @@ html{
     font-size:12px;
     font-family: 'Gotu', sans-serif;
     width:100vw;
-
     overflow-x: hidden;
 }
 .btn{
@@ -64,9 +63,11 @@ i{
     text-transform: uppercase;
     font-size:1rem;
     letter-spacing: 0.1rem;
+   
 }
 .content-container{
     padding:20px;
+    background: #EEF3F3;
 }
 
 .wrapper{
@@ -124,6 +125,7 @@ i{
 
 .blog-content{
     padding: 10px 0;
+
 }
 .blog-excerpt{
     width:100%;
@@ -147,8 +149,7 @@ i{
 .page-container{
     width:100vw;
     text-align: right;
- 
-    padding:10px 0;
+    padding:20px 0;
 }
 .recommended-post-header, .recommended-post-container{
     width:100%;
