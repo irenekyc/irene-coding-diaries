@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/post.css">
+    <title><%= post.title %></title>
+    <link rel="icon" href="images/book-open-solid.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Gotu&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a1e74affc8.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="photo-container">
+        <img src="<%= post.coverImage %>">
+    </div>
+    <div class="blog-heading"><h1><%= post.title %></h1></div>
+    <div class="content-container wrapper">
+  
+        <div class="blog-links"> 
+            <span>Share: </span>
+            <span> <i class="sm-btn fab fa-facebook-f"></i></span>
+            <span><i class="sm-btn fab fa-twitter"></i></span>
+            <span><i class="sm-btn fab fa-linkedin-in"></i></span>
+        </div>
+        <div class="blog-details filter-container">
+            <p> Post by <%= post.author %> on <%= post.createdDate.toLocaleDateString() %></p>
+            <p> Tags:
+            <% tags.forEach((tag)=>{ %>
+                 <span class="filter <%= tag %>-filter" id="<%= tag %>-filter">#<%= tag.trim() %></span>
+           <%  }) %>
+             </p>
+        </div>
+        <div class="blog-content">
+           <a href="/posts"><p class="btn back-home"> <i class="fas fa-chevron-left"></i>Back Home </p></a> 
+            <h3 class="blog-excerpt">
+                <%= post.excerpt %>
+            </h3>
+            
+            <div class="in-blog-image">
+                <img  src="<%= post.blogImage %>">
+            </div>
+            <% paragraphs.forEach((p)=>{ %>
+                <p class="blog-full-content"> <%= p %> </p>
+           <% }) %>
+                
+            
+            
+
+            </div>
+        </div>
+    </div>
+    <div class="page-container wrapper">
+        <!-- <span class="btn"> <a href="/">Next:  <i class="fas fa-angle-right"></i> </a> </span> -->
+
+            <div class="recommended-post-header">
+                <h3> Recommended Posts</h3>
+            </div>
+            
+            <div class="recommended-post-container">
+                <% recommendedPost.forEach((post)=>{ %>
+                    <a href="/<%= post.slug %>"><div class="recommended-post-card">
+                        <div class="recommended-post-photo">
+                            <img src="<%= post.coverImage %>">
+                        </div>
+                        <div class="recommended-post-title">
+                            <h3> <%= post.title %></h3>
+                        </div>
+                    </div></a>
+                <% }) %>
+
+                </div>
+
+    </div>
+
+    <div class="footer">
+        <p>Design by Irene K.</p>
+        <div class="social-media">
+            <ul>
+                <li>
+                   <a href="https://www.youtube.com/channel/UC8AHif92m5CvePZDyhReejw/featured?view_as=subscriber" target="_blank"><i class="sm-btn fab fa-youtube"></i></a>
+               </li>
+               <li>
+                    <a href="https://twitter.com/IreneK86090683" target="_blank"><i class="sm-btn fab fa-twitter"></i></a>
+               </li>
+               <li>
+                    <a href="https://github.com/irenekyc" target="_blank"><i class="sm-btn fab fa-github"></i></a>
+               </li>
+               <li>
+                   <a href="mailto:irenekayuc@gmail.com"><i class="sm-btn fas fa-envelope"></i></a>
+               </li>
+          
+           </ul>
+        </div>
+    </div>
+<script src="js/index.js"></script>
+<script src="js/goodbye.js"></script>
+</body>
+</html>

@@ -5,8 +5,26 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node src/app.js"
+    "dev": "nodemon src/app.js"
   },
   "author": "Irene K",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/irenekyc/irene-coding-diaries.git"
+  },
+  "bugs": {
+    "url": "https://github.com/irenekyc/irene-coding-diaries/issues"
+  },
+  "homepage": "https://github.com/irenekyc/irene-coding-diaries#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  },
+  "dependencies": {
+    "ejs": "^3.0.2",
+    "express": "^4.17.1",
+    "mongodb": "^3.5.5",
+    "mongoose": "^5.9.7",
+    "slugify": "^1.4.0"
+  }
 }
