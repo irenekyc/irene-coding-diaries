@@ -241,6 +241,15 @@ input[type="text"]{
     border: none;
     outline:none;
 }
+.searchResult{
+    width:100vw;
+    height:60px;
+    font-size:14px;
+    line-height: 20px;
+    text-align: center;
+    padding:20px 0;
+
+}
 
 .blog-card{
     width:100%;

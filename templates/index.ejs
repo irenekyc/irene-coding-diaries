@@ -25,12 +25,12 @@
 
                 <div class="hero-slide featured-blog" id="featured-blog-1">
                     <div class="featured-blog-bg">
-                        <img src="images/trial2.png">
+                        <img src="<%= featuredPosts[0].coverImage %>">
                     </div>
                     <div class="featured-blog-title">
-                        <h1 class="blog-heading"> My portfolio site secret reveal! </h1>
-                        <p class="blog-description"> How did I finish my portfolio site after 3 months of learning code?</p>
-                        <a href="#"><p class="blog-read-more btn"> Read More ></p></a>
+                        <h1 class="blog-heading"> <%= featuredPosts[0].title %> </h1>
+                        <p class="blog-description">  <%= featuredPosts[0].excerpt %></p>
+                        <a href="/<%= featuredPosts[0].slug %>"><p class="blog-read-more btn"> Read More ></p></a>
                     </div>
                 </div>
             </div>
@@ -46,10 +46,10 @@
             <div class="main-content-session-header">
                 <p class="session-title">Discover my coding secrets!</p>
                 <div class="filter-container wrapper-narrow">
-                    <div class="filter-div">  <p class="filter" id="topic-main">Filter by topic</p>   <div class="filter-sub topic-main"><span class=" js-filter filter" id="js-filter"> Javascript</span>
-                        <span class="node-filter filter" id="node-filter"> Node Js</span> <span class="css-filter filter" id="css-filter"> Pure CSS</span></div> </div>
-                    <div class="sort-div"><p class="filter" id="time-main"> Sort by </p> <div class="sort-sub time-main"><span class="filter" id="sort=ascending"> Earlest </span><span class="filter" id="sort=descending"> Latest </span></div></div>
-                    <div class="search-div"> <p class="filter" id="search-main"> Search</p> <div class=" search-main seach-sub"><input class=""type="text" name="searchName" id="searchKeyWords"><i class=" btn fas fa-search" id="search-confirm"></i></div></div>
+                    <div class="filter-div">  <p class="filter" id="topic-main">Filter by topic</p>   <div class="filter-sub topic-main"><a href="/filter?category=js"><span class=" js-filter filter" id="js-filter"> Javascript</span></a>
+                     <a href="/filter?category=node">   <span class="node-filter filter" id="node-filter"> Node Js</span></a> <a href="/filter?category=css"><span class="css-filter filter" id="css-filter"> Pure CSS</span></a></div> </div>
+                    <div class="sort-div"><p class="filter" id="time-main"> Sort by </p> <div class="sort-sub time-main"><a href="/filter?sort=ascending"><span class="filter" id="sort=ascending"> Earlest </span></a> <a href="/filter?sort=descending"><span class="filter" id="sort=descending"> Latest </span></div></a></div>
+                    <div class="search-div"> <p class="filter" id="search-main"> Search</p> <div class=" search-main seach-sub"><input class=""type="text" name="searchName" id="searchKeyWords"><a id="searchQuery" href="/"><i class=" btn fas fa-search" id="search-confirm"></i></a></div></div>
                 </div>
              </div>
 <% posts.forEach((post)=>{ %>

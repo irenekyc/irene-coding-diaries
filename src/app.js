@@ -13,52 +13,55 @@ app.set('view engine', 'ejs')
 
 app.get('/', async (req,res)=>{
     const posts =  await Blog.find({}).sort({createdDate: 'descending'})
+    const featuredPosts = await Blog.find({feature: true}).sort({createdDate: 'descending'}).limit(1)
     try{
-    res.render('index', {posts})}
+    res.render('index', {posts, featuredPosts})}
     catch{ e => console.log(e)}
 })
 
+let sortQuery, searchQuery, categoryQuery
+
 app.get('/posts', async (req,res)=>{
-    const posts =  await Blog.find({}).sort({createdDate: 'descending'})
+    sortQuery='descending'
+    const posts =  await Blog.find({}).sort({createdDate: sortQuery})
     try{
-        res.render('posts', {posts})
+        res.render('posts', {posts, sortQuery, searchQuery, categoryQuery})
     }
     catch{ e=> console.log(e)
     }
     
 })
+let foundPosts
 
 app.get('/filter', async (req, res)=>{
-    const searchQuery = req.query.search.toLowerCase()
-    const sortQuery = req.query.sort
-    const categoryQuery = req.query.category
-    let foundPosts
-    if (sortQuery){
-        sortedPosts = await Blog.find({}).sort({createDate: sortQuery})
-     } else {
-        sortedPosts = await Blog.find({}).sort({createDate: 'descending'})
-     }
+    searchQuery = req.query.search
+    sortQuery = req.query.sort || 'descending'
+    categoryQuery = req.query.category
+    sortedPosts = await Blog.find({}).sort({createdDate: sortQuery})
     if (searchQuery){
+        searchQuery = searchQuery.toLowerCase()
         foundPosts = sortedPosts.filter((p)=>{
             const title = p.title.toLowerCase()
-            if (title.includes(searchQuery) || p.MainContent.includes(searchQuery)||p.categories.includes(searchQuery)){
+            const author = p.author.toLowerCase()
+            if (title.includes(searchQuery) || p.MainContent.includes(searchQuery)||p.categories.includes(searchQuery)||author.includes(searchQuery)){
                 const search = true
                 return search
             }
-    })} else if (categoryQuery){
-        foundPosts = await Blog.find({categories: {"$regex": categoryQuery, $options: "i"}})
+    })
+    } 
+    if (categoryQuery){
+        foundPosts = await Blog.find({categories: {"$regex": categoryQuery, $options: "i"}}).sort({createdDate: sortQuery})
             }
-            console.log(foundPosts)
         try{
             if(foundPosts){
-                res.render('posts', {posts: foundPosts})
+                posts = foundPosts
             } else {
-                res.render('posts', {posts: sortedPosts})
-            }           
+                posts= sortedPosts
+            }   
+             res.render('posts', {posts, searchQuery, sortQuery, categoryQuery})       
         } catch{
             e=> console.log(e)
         }
-    
 })
 
 app.get('/:slug', async (req, res)=>{  

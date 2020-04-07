@@ -1,19 +1,24 @@
 ////////////////////Filter////////////////////////////////
 const filterContainer = document.querySelector('.filter-container')
+const searchQuery = document.getElementById('searchKeyWords')
 filterContainer.addEventListener('click', (e)=>{
     const actionPoint =  e.target.id
     if (actionPoint.includes('main')){
         return document.querySelector(`.${actionPoint}`).style.display="block"
     }
-    if(e.target.id.includes('filter')){
-       return console.log(e.target.id)
-    }
-    if (e.target.id.includes('sort')){
-        return console.log(e.target.id)}
-    
     if (e.target.id === "search-confirm"){
-        return console.log(document.getElementById('searchKeyWords').value)
+        document.getElementById('searchQuery').href=
+        `/filter?search=${searchQuery.value}`
+        console.log(document.getElementById('searchQuery').href)
     } 
+})
+window.addEventListener('keydown', (e)=>{
+        if (e.keyCode == 13){
+            if (searchQuery.value){
+                const host=window.location.origin
+                return window.location.replace(`${host}/filter?search=${searchQuery.value}`)
+            }
+        }
 })
 
 // Reveal on Scroll
@@ -39,3 +44,6 @@ const calculateScroll = (item, effect, percentage)=>{
             return item.classList.add(effect)
         }
     }
+
+
+

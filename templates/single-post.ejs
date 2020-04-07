@@ -19,7 +19,6 @@
   
         <div class="blog-links"> 
             <span>Share: </span>
-            <span> <i class="sm-btn fab fa-facebook-f"></i></span>
             <span><i class="sm-btn fab fa-twitter"></i></span>
             <span><i class="sm-btn fab fa-linkedin-in"></i></span>
         </div>
@@ -27,7 +26,7 @@
             <p> Post by <%= post.author %> on <%= post.createdDate.toLocaleDateString() %></p>
             <p> Tags:
             <% tags.forEach((tag)=>{ %>
-                 <span class="filter <%= tag %>-filter" id="<%= tag %>-filter">#<%= tag.trim() %></span>
+                 <a href="/filter?category=<%= tag.trim() %>"><span class="filter <%= tag %>-filter" id="<%= tag %>-filter">#<%= tag.trim() %></span></a>
            <%  }) %>
              </p>
         </div>
@@ -94,6 +93,5 @@
         </div>
     </div>
 <script src="js/index.js"></script>
-<script src="js/goodbye.js"></script>
 </body>
 </html>
