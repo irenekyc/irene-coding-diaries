@@ -519,6 +519,13 @@ input[type="text"]{
 .closeModal{
     display:none;
 }
+.leave-message{
+    background: #EE7C7C;
+    color:white;
+    border-radius: 10px;
+    margin-top:15px;
+    padding:5px 10px;
+}
 
 /*Reveal*/
 .reveal-items-slide, .reveal-items{
@@ -544,4 +551,27 @@ input[type="text"]{
 
 .fadeIn{
     opacity:1;
+}
+
+.fade{
+    opacity:0;
+    animation: fadeCard 1s forwards;
+}
+
+@keyframes fadeCard {
+    0%{
+        opacity:0;
+    }
+    100%{
+        opacity:1;
+    }
+}
+.fade:nth-child(n+1){
+    animation-delay: 0.5s;
+}
+.fade:nth-child(n+2){
+    animation-delay: 1s;
+}
+.fade:nth-child(n+3){
+    animation-delay: 1.5s;
 }

@@ -3,6 +3,8 @@ const app = express()
 const path = require ('path')
 const ejs = require('ejs')
 const Blog = require('./js/mongoose')
+const PORT = process.env.PORT
+
 
 const publicDirectoryPath = path.join(__dirname, '../public')
 const viewsPath = path.join(__dirname, '../templates')
@@ -11,8 +13,9 @@ app.use(express.static(publicDirectoryPath))
 app.set('views', viewsPath)
 app.set('view engine', 'ejs')
 
+
 app.get('/', async (req,res)=>{
-    const posts =  await Blog.find({}).sort({createdDate: 'descending'})
+    const posts =  await Blog.find({}).sort({createdDate: 'descending'}).limit(3)
     const featuredPosts = await Blog.find({feature: true}).sort({createdDate: 'descending'}).limit(1)
     try{
     res.render('index', {posts, featuredPosts})}
@@ -68,7 +71,6 @@ app.get('/:slug', async (req, res)=>{
     const slugQuery = req.params.slug
     const post = await Blog.findOne({slug: slugQuery})
     const paragraphs = post.MainContent.split('#')
-    console.log(paragraphs.length)
     let firstP=[], secondP = [], thirdP=[], lastP=[]
     for (i=0; i<2; i++){
         firstP.push(paragraphs[i])
@@ -94,6 +96,7 @@ app.get('/:slug', async (req, res)=>{
     
 })
 
-app.listen( '3000', ()=>{
-    console.log('server is now up on 3000')
+
+app.listen( PORT, ()=>{
+    console.log('server is now up on ' + PORT)
 })

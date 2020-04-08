@@ -20,9 +20,9 @@
                             <a href="/filter?category=js<% if (sortQuery){ %>&sort=<%= sortQuery %><% } %>">
                                 <span class=" js-filter filter" id="js-filter"> Javascript</span></a>
                             <a href="/filter?category=node<% if (sortQuery){ %>&sort=<%= sortQuery %><% } %>">
-                                <span class="node-filter filter" id="node-filter"> Node Js</span> </a>
+                                <span class="node-filter filter" id="node-filter"> Node</span> </a>
                             <a href="/filter?category=css<% if (sortQuery){ %>&sort=<%= sortQuery %><% } %>">
-                                 <span class="css-filter filter" id="css-filter"> Pure CSS</span></div> </a></div>
+                                 <span class="css-filter filter" id="css-filter"> CSS</span></div> </a></div>
                      <div class="sort-div"><p class="filter" id="time-main"> Sort by </p> <div class="sort-sub time-main">
                          <a href="/filter?sort=ascending<% if (searchQuery){ %>&search=<%= searchQuery %> <% } else if (categoryQuery){ %>&category=<%= categoryQuery %> <% } %>">
                                 <span class="filter" id="sort=ascending"> Earlest </span></a>
@@ -42,7 +42,7 @@
                     <% } %>
                     
                 <% posts.forEach((post)=>{ %>
-                    <div class="blog-card wrapper">
+                    <div class="blog-card wrapper fade">
                         <div class="blog-cover-image">
                             <img src="<%= post.coverImage %>">
                         </div>
@@ -58,31 +58,9 @@
                     </div>
                 <% }) %>
 
-
-
-                        <div class="footer reveal-items">
-                            <p>Design by Irene K.</p>
-                            <div class="social-media">
-                                <ul>
-                                    <li>
-                                       <a href="https://www.youtube.com/channel/UC8AHif92m5CvePZDyhReejw/featured?view_as=subscriber" target="_blank"><i class="fab fa-youtube"></i></a>
-                                   </li>
-                                   <li>
-                                        <a href="https://twitter.com/IreneK86090683" target="_blank"><i class="fab fa-twitter"></i></a>
-                                   </li>
-                                   <li>
-                                        <a href="https://github.com/irenekyc" target="_blank"><i class="fab fa-github"></i></a>
-                                   </li>
-                                   <li>
-                                       <a href="mailto:irenekayuc@gmail.com"><i class="fas fa-envelope"></i></a>
-                                   </li>
-                              
-                               </ul>
-                            </div>
+                <%- include('footer') %>
                        
                         </div>
-                        </div> 
-
 <script src="js/index.js"></script>
 
 </body>

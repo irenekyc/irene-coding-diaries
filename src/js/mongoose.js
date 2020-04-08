@@ -1,9 +1,10 @@
 const mongoose = require ('mongoose')
-const slugify = require('slugify')
 
-mongoose.connect('mongodb://127.0.0.1:27017/irene-coding-dailies', {
+mongoose.connect(process.env.dbURL, {
     useNewUrlParser: true,
-})
+    useCreateIndex: true,
+    useFindAndModify: false
+   })
 
 
 const blogSchema = new mongoose.Schema({
@@ -77,7 +78,6 @@ const blogSchema = new mongoose.Schema({
 // })
 
 const Blog = mongoose.model('blog', blogSchema)
-
 
 
 module.exports = Blog

@@ -10,7 +10,8 @@ const welcomeMsg = ()=>{
     <div class="modal-description"> 
     <p> Hi My name is Irene! </p>
     <p> Please feel free to browse around! I hope you enjoy my site.</p>
-    <span class="btn continue-btn" id="close-modal"> Continue reading </span>
+    <a href="http://irene-k-message-board.herokuapp.com/" target="_blank" class="btn leave-message"> Leave me a message </a>
+    <p class="btn continue-btn" id="close-modal"> Continue reading </p>
     </div>
     <span class="btn float-top" id="close-modal"> X </span>
     </div>`

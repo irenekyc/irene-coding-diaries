@@ -47,7 +47,7 @@
                 <p class="session-title">Discover my coding secrets!</p>
                 <div class="filter-container wrapper-narrow">
                     <div class="filter-div">  <p class="filter" id="topic-main">Filter by topic</p>   <div class="filter-sub topic-main"><a href="/filter?category=js"><span class=" js-filter filter" id="js-filter"> Javascript</span></a>
-                     <a href="/filter?category=node">   <span class="node-filter filter" id="node-filter"> Node Js</span></a> <a href="/filter?category=css"><span class="css-filter filter" id="css-filter"> Pure CSS</span></a></div> </div>
+                     <a href="/filter?category=node">   <span class="node-filter filter" id="node-filter"> Node</span></a> <a href="/filter?category=css"><span class="css-filter filter" id="css-filter"> CSS</span></a></div> </div>
                     <div class="sort-div"><p class="filter" id="time-main"> Sort by </p> <div class="sort-sub time-main"><a href="/filter?sort=ascending"><span class="filter" id="sort=ascending"> Earlest </span></a> <a href="/filter?sort=descending"><span class="filter" id="sort=descending"> Latest </span></div></a></div>
                     <div class="search-div"> <p class="filter" id="search-main"> Search</p> <div class=" search-main seach-sub"><input class=""type="text" name="searchName" id="searchKeyWords"><a id="searchQuery" href="/"><i class=" btn fas fa-search" id="search-confirm"></i></a></div></div>
                 </div>
@@ -75,29 +75,8 @@
                 <a href="/posts"><span class="read-all btn">Read all > </span></a>
             </div>  
 
- <div class="footer reveal-items wrapper-narrow">
 
-     <p>Design by Irene K.</p>
-     <div class="social-media">
-         <ul>
-             <li>
-                <a href="https://www.youtube.com/channel/UC8AHif92m5CvePZDyhReejw/featured?view_as=subscriber" target="_blank"><i class="fab fa-youtube"></i></a>
-            </li>
-            <li>
-                 <a href="https://twitter.com/IreneK86090683" target="_blank"><i class="fab fa-twitter"></i></a>
-            </li>
-            <li>
-                 <a href="https://github.com/irenekyc" target="_blank"><i class="fab fa-github"></i></a>
-            </li>
-            <li>
-                <a href="mailto:irenekayuc@gmail.com"><i class="fas fa-envelope"></i></a>
-            </li>
-       
-        </ul>
-     </div>
-
- </div>
-
+            <%- include('footer') %>
  <script src="js/index.js"></script>
  <script src="js/welcome.js"></script>
 
