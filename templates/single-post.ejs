@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="<%= post.SEOkeyWords %>"/>
     <link rel="stylesheet" href="css/post.css">
     <title><%= post.title %></title>
     <link rel="icon" href="images/book-open-solid.svg">
@@ -14,7 +15,7 @@
     <div class="photo-container">
         <img src="<%= post.coverImage %>">
     </div>
-    <div class="blog-heading"><h1><%= post.title %></h1></div>
+    <div class="blog-heading"><h1 class="blog-heading-title"><%= post.title %></h1></div>
     <div class="content-container wrapper">
   
         <div class="blog-links"> 
@@ -36,17 +37,36 @@
                 <%= post.excerpt %>
             </h3>
             
-            <div class="in-blog-image">
-                <img  src="<%= post.blogImage %>">
-            </div>
-            <% paragraphs.forEach((p)=>{ %>
-                <p class="blog-full-content"> <%= p %> </p>
-           <% }) %>
-                
-            
-            
-
-            </div>
+         
+            <% firstP.forEach((p)=>{ %>
+                <p class="blog-full-content"> <%= p %></p>
+           <% }) %>   
+           <div class="in-blog-image">
+            <img  src="<%= post.blogImage1 %>">
+            <p class="img-description"> <%= post.img1Description %> </p>
+        </div>
+       
+        <% secondP.forEach((p)=>{ %>
+            <p class="blog-full-content"> <%= p %></p>
+       <% }) %>
+       <div class="in-blog-image">
+        <img  src="<%= post.blogImage2 %>">
+        <p class="img-description">  <%= post.img2Description %> </p>
+    </div>
+    <% thirdP.forEach((p)=>{ %>
+        <p class="blog-full-content"> <%= p %></p>
+   <% }) %>
+   <% if (post.blogImage3) { %>
+    <div class="in-blog-image">
+        <img  src="<%= post.blogImage3 %>">
+        <p class="img-description">  <%= post.img3Description %> </p>
+    </div>
+           
+  <% } %>
+  <% lastP.forEach((p)=>{ %>
+    <p class="blog-full-content"> <%= p %></p>
+<% }) %>
+      </div>
         </div>
     </div>
     <div class="page-container wrapper">

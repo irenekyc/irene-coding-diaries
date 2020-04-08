@@ -8,9 +8,8 @@ const welcomeMsg = ()=>{
     <div class="modal-inner">
     <div class="profile-pic"><img src="images/profile-thumbnail.jpg"></div>
     <div class="modal-description"> 
-    <p> Hi My name is Irene! I started code learning three months ago.</p>
-    <p> I wanna say welcome again. </p>
-    <p> I hope you enjoy my site.</p>
+    <p> Hi My name is Irene! </p>
+    <p> Please feel free to browse around! I hope you enjoy my site.</p>
     <span class="btn continue-btn" id="close-modal"> Continue reading </span>
     </div>
     <span class="btn float-top" id="close-modal"> X </span>

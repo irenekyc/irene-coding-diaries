@@ -11,7 +11,9 @@ const blogSchema = new mongoose.Schema({
         type: Boolean,
         default: false,
     },
-    
+    SEOkeyWords: {
+        type: String,
+    },
     title: {
         type:String,
         required:true,
@@ -44,8 +46,23 @@ const blogSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    blogImage: {
+    blogImage1: {
         type: String
+    },
+    img1Description:{
+        type:String
+    },
+    blogImage2: {
+        type: String
+    },
+    img2Description:{
+        type:String
+    },
+    blogImage3: {
+        type: String
+    },
+    img3Description:{
+        type:String
     },
     slug:{
         type: String, 

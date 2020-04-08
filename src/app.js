@@ -68,12 +68,26 @@ app.get('/:slug', async (req, res)=>{
     const slugQuery = req.params.slug
     const post = await Blog.findOne({slug: slugQuery})
     const paragraphs = post.MainContent.split('#')
+    console.log(paragraphs.length)
+    let firstP=[], secondP = [], thirdP=[], lastP=[]
+    for (i=0; i<2; i++){
+        firstP.push(paragraphs[i])
+    }
+    for (i=2; i<4; i++){
+        secondP.push(paragraphs[i])
+    }
+    for (i=4; i<6; i++){
+        thirdP.push(paragraphs[i])
+    }
+    for (i=6; i<paragraphs.length; i++){
+        lastP.push(paragraphs[i])
+    }
     const tags = post.categories.split(',')
     const recommendedPosts = await Blog.find({feature : true}).sort({'createdDate': 'descending'}).limit(4)
     const recommendedPost = recommendedPosts.filter(e => e.title !==post.title)
 
     try {
-        res.render('single-post', {post, paragraphs, tags, recommendedPost})
+        res.render('single-post', {post, firstP, secondP, thirdP, lastP, tags, recommendedPost})
     } catch {
         e=> console.log(e)
     }
