@@ -13,7 +13,7 @@
 </head>
 <body>
     <div class="photo-container">
-        <img src="<%= post.coverImage %>">
+        <img src="images/<%= post.coverImage %>">
     </div>
     <div class="blog-heading"><h1 class="blog-heading-title"><%= post.title %></h1></div>
     <div class="content-container wrapper">
@@ -42,7 +42,7 @@
                 <p class="blog-full-content"> <%= p %></p>
            <% }) %>   
            <div class="in-blog-image">
-            <img  src="<%= post.blogImage1 %>">
+            <img  src="images/<%= post.blogImage1 %>">
             <p class="img-description"> <%= post.img1Description %> </p>
         </div>
        
@@ -50,7 +50,7 @@
             <p class="blog-full-content"> <%= p %></p>
        <% }) %>
        <div class="in-blog-image">
-        <img  src="<%= post.blogImage2 %>">
+        <img  src="images/<%= post.blogImage2 %>">
         <p class="img-description">  <%= post.img2Description %> </p>
     </div>
     <% thirdP.forEach((p)=>{ %>
@@ -58,7 +58,7 @@
    <% }) %>
    <% if (post.blogImage3) { %>
     <div class="in-blog-image">
-        <img  src="<%= post.blogImage3 %>">
+        <img  src="images/<%= post.blogImage3 %>">
         <p class="img-description">  <%= post.img3Description %> </p>
     </div>
            
